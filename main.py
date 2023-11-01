@@ -3,6 +3,7 @@ import plotly.express as px
 import pandas as pd
 
 from adls import ADLS
+import settings
 
 df = pd.read_csv(
     "https://raw.githubusercontent.com/plotly/datasets/master/gapminder_unfiltered.csv"
@@ -19,10 +20,8 @@ app.layout = html.Div(
         html.Div(
             [
                 html.H1(children="ADLS Data", style={"textAlign": "center"}),
-                html.P(children="Container Names"),
-                html.P(children=ADLS().get_container_names()),
-                html.P(children="Blob Names"),
-                html.P(children=ADLS().get_blob_names("test")),
+                html.P(children="File Names in Directory"),
+                html.P(children=ADLS().get_files_in_directory("test", "data")),
             ]
         ),
     ]
@@ -35,9 +34,9 @@ def update_graph(value):
     return px.line(dff, x="year", y="pop")
 
 
-server = app.server
-
+if settings.ENV != "LOCAL":
+    server = app.server
 
 if __name__ == "__main__":
-    # app.run(debug=True)
-    server = app.server
+    app.run(debug=True)
+    # server = app.server

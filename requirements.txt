@@ -4,3 +4,5 @@ pandas
 gunicorn
 azure-identity
 azure-storage-blob
+python-dotenv
+azure-storage-file-datalake

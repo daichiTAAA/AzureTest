@@ -12,4 +12,4 @@ gunicorn main:server
 - [Azure SDK for Python を使用して Azure サービスに対して Python アプリを認証する方法](https://learn.microsoft.com/ja-jp/azure/developer/python/sdk/authentication-overview)
 - [Azure Blob Storage と Python で作業を開始する](https://learn.microsoft.com/ja-jp/azure/storage/blobs/storage-blob-python-get-started?tabs=azure-ad)
 - [環境変数としてのアプリ設定へのアクセス](https://learn.microsoft.com/ja-jp/azure/app-service/configure-language-python#access-app-settings-as-environment-variables)
-- [クイック スタート: Python 用 Azure Blob Storage クライアント ライブラリ](https://learn.microsoft.com/ja-jp/azure/storage/blobs/storage-quickstart-blobs-python?tabs=managed-identity%2Croles-azure-portal%2Csign-in-azure-cli)
+- [Python を使用して Azure Data Lake Storage Gen2 でディレクトリとファイルを管理する](https://learn.microsoft.com/ja-jp/azure/storage/blobs/data-lake-storage-directory-file-acl-python?tabs=azure-ad)
