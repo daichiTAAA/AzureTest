@@ -2,3 +2,5 @@ dash
 plotly
 pandas
 gunicorn
+azure-identity
+azure-storage-blob
