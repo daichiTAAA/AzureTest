@@ -21,14 +21,25 @@ app.layout = html.Div(
             [
                 html.H1(children="ADLS Data", style={"textAlign": "center"}),
                 html.P(children="File Names in Directory"),
-                html.P(children=ADLS().get_files_in_directory("test", "data")),
+                html.Button("Show Files", id="show-files-button"),
+                html.Div(id="files-list"),
             ]
         ),
     ]
 )
 
 
-@callback(Output("graph-content", "figure"), Input("dropdown-selection", "value"))
+@app.callback(Output("files-list", "children"), Input("show-files-button", "n_clicks"))
+def display_files(n):
+    if n is None:
+        return []
+    try:
+        return ADLS().list_files_in_directory("test", "data")
+    except Exception as e:
+        return f"Error connecting to ADLS: {str(e)}"
+
+
+@app.callback(Output("graph-content", "figure"), Input("dropdown-selection", "value"))
 def update_graph(value):
     dff = df[df.country == value]
     return px.line(dff, x="year", y="pop")
