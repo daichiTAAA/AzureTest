@@ -23,5 +23,9 @@ def update_graph(value):
     return px.line(dff, x="year", y="pop")
 
 
+server = app.server
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    # app.run(debug=True)
+    server = app.server
