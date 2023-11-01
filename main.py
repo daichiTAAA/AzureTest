@@ -34,7 +34,7 @@ def display_files(n):
     if n is None:
         return []
     try:
-        return ADLS().list_files_in_directory("test", "data")
+        return ADLS().get_files_in_directory("test", "data")
     except Exception as e:
         return f"Error connecting to ADLS: {str(e)}"
 
